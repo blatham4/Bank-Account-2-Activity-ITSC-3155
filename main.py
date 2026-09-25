@@ -5,6 +5,7 @@ class BankAccount:
         self.customer_name="Bethany"
         self.current_balance=200
         self.minimum_balance=0
+        self.account_number=5678
     def deposit(self, amount):
         if amount>0 :
             self.current_balance=amount+self.current_balance
