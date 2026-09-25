@@ -23,6 +23,11 @@ class BankAccount:
         print("Customer Name:",self.customer_name)
         print("Current Balance:",self.current_balance)
         print("Minimum Balance:",self.minimum_balance)
+class Savings_account(BankAccount):
+    def __init__(self):
+        super().__init__()
+        self.interest.rate=0.02
+
 
 account1 = BankAccount()
 account1.deposit(100)
