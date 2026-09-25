@@ -28,6 +28,10 @@ class Savings_account(BankAccount):
         super().__init__()
         self.interest.rate=0.02
 
+    def add_interest(self):
+        interest=self.current_balance+self.interest.rate
+        self.current.balance+=interest
+
 
 account1 = BankAccount()
 account1.deposit(100)
