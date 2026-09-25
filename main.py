@@ -32,6 +32,10 @@ class Savings_account(BankAccount):
         interest=self.current_balance+self.interest.rate
         self.current.balance+=interest
 
+    def print_customer_information(self):
+        super().print_customer_information()
+        print("Interest Rate:"+ self.interest.rate)
+
 
 account1 = BankAccount()
 account1.deposit(100)
