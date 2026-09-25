@@ -41,11 +41,12 @@ class Savings_account(BankAccount):
 account1 = BankAccount()
 account1.deposit(100)
 account1.withdraw(50)
+account1.add_interest()
 
 account2=BankAccount()
 account2.deposit(200)
 account2.withdraw(80)
-
+account2.add_interest()
 
 account1.print_customer_information()
 account2.print_customer_information()
