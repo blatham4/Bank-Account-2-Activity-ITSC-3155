@@ -5,6 +5,7 @@ class BankAccount:
         self.customer_name="Bethany"
         self.current_balance=200
         self.minimum_balance=0
+        self.account_number=5678
     def deposit(self, amount):
         if amount>0 :
             self.current_balance=amount+self.current_balance
@@ -23,15 +24,29 @@ class BankAccount:
         print("Customer Name:",self.customer_name)
         print("Current Balance:",self.current_balance)
         print("Minimum Balance:",self.minimum_balance)
+class Savings_account(BankAccount):
+    def __init__(self):
+        super().__init__()
+        self.interest.rate=0.02
+
+    def add_interest(self):
+        interest=self.current_balance+self.interest.rate
+        self.current.balance+=interest
+
+    def print_customer_information(self):
+        super().print_customer_information()
+        print("Interest Rate:"+ self.interest.rate)
+
 
 account1 = BankAccount()
 account1.deposit(100)
 account1.withdraw(50)
+account1.add_interest()
 
 account2=BankAccount()
 account2.deposit(200)
 account2.withdraw(80)
-
+account2.add_interest()
 
 account1.print_customer_information()
 account2.print_customer_information()
