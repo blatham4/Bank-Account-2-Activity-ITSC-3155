@@ -1,52 +1,39 @@
-class BankAccount:
-    Bank_Name = "Bank of America"
+from savings_acc import Savings_account
+from checking_acc import CheckingAccount
 
-    def __init__(self):
-        self.customer_name="Bethany"
-        self.current_balance=200
-        self.minimum_balance=0
-        self.account_number=5678
-    def deposit(self, amount):
-        if amount>0 :
-            self.current_balance=amount+self.current_balance
-        else:
-            print("Can not deposit negative amount")
-
-    def withdraw(self, amount):
-        if amount < 0:
-            print("Can not withdraw negative amount")
-        elif self.current_balance - amount < self.minimum_balance:
-            print("Can not withdraw because it would go below the minimum balance")
-        else:
-            self.current_balance = self.current_balance - amount
-    def print_customer_information(self):
-        print("Bank Name:",self.Bank_Name)
-        print("Customer Name:",self.customer_name)
-        print("Current Balance:",self.current_balance)
-        print("Minimum Balance:",self.minimum_balance)
-class Savings_account(BankAccount):
-    def __init__(self):
-        super().__init__()
-        self.interest.rate=0.02
-
-    def add_interest(self):
-        interest=self.current_balance+self.interest.rate
-        self.current.balance+=interest
-
-    def print_customer_information(self):
-        super().print_customer_information()
-        print("Interest Rate:"+ self.interest.rate)
-
-
-account1 = BankAccount()
+account1 = Savings_account("Bethany", "123456789", "6000000")
 account1.deposit(100)
 account1.withdraw(50)
 account1.add_interest()
 
-account2=BankAccount()
+account2=Savings_account("Srujana", "987654321", "8000001")
 account2.deposit(200)
 account2.withdraw(80)
 account2.add_interest()
 
 account1.print_customer_information()
 account2.print_customer_information()
+
+
+checking1 = CheckingAccount(
+    "Alice",
+    "10000000",
+    "5000000",
+    300
+)
+checking1.deposit(300)
+checking1.withdraw(100)
+checking1.transfer(150)
+
+checking2 = CheckingAccount(
+    "Bob",
+    "2000000",
+    "9000000",
+    400
+)
+checking2.deposit(500)
+checking2.withdraw(50)
+checking2.transfer(200)
+
+checking1.print_customer_information()
+checking2.print_customer_information()
